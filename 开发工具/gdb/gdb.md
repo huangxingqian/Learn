@@ -2,25 +2,25 @@
 ### 一、基本调试流程
 1. 启动调试
     - 调试未运行程序：
-      ```bash
+  ```bash
 gdb ./your_program  # 加载可执行文件
 ```
     - 附加到正在运行的进程：
-      ```bash
+  ```bash
 gdb attach <PID>    # 替换为进程的实际ID
 ```
     - 带参数启动程序：
-      ```bash
+  ```bash
 gdb --args ./your_program arg1 arg2  # 传递运行参数
 ```
 2. 设置断点
     - 按行号或函数名设置：
-      ```bash
+  ```bash
 (gdb) break main       # 在main函数入口设断点
 (gdb) break filename.c:20  # 指定文件的第20行
 ```
     - 条件断点：
-      ```bash
+  ```bash
 (gdb) break 15 if x > 5  # 当变量x>5时触发
 ```
 3. 运行程序
