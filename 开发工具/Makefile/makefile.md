@@ -24,13 +24,13 @@ main.o: main.c
 ### 二、变量与自动化操作
 1. 变量定义与使用
     - 自定义变量：用于简化重复路径或参数：
-        ```makefile
+  ```makefile
 CC = gcc
 CFLAGS = -Wall -g
 OBJS = main.o utils.o
 ```
     - 内置变量：如$@（目标名）、$<（第一个依赖）、$^（所有依赖）；
-        ```makefile
+  ```makefile
 %.o: %.c
     $(CC) $(CFLAGS) -c $< -o $@
 ```
@@ -49,12 +49,12 @@ clean:
 ### 三、多文件编译与复杂工程
 1. 多文件编译
     - 显式依赖：直接列出所有源文件生成目标：
-        ```makefile
+    ```makefile
 app: main.c utils.c
     gcc main.c utils.c -o app
 ```
     - 隐式规则：通过.o文件自动编译并链接：
-        ```makefile
+    ```makefile
 OBJS = main.o utils.o
 app: $(OBJS)
     gcc $(OBJS) -o app
@@ -63,13 +63,13 @@ main.o: main.c
 ```
 2. 多级目录管理
     - 自动搜索文件：使用wildcard函数和模式匹配：
-        ```makefile
+  ```makefile
 SRC_DIR = src
 SRCS = $(wildcard $(SRC_DIR)/*.c)
 OBJS = $(SRCS:.c=.o)
 ```
     - 递归编译子目录：
-        ```makefile
+  ```makefile
 subdir:
     cd subdir && $(MAKE)
 ```
@@ -77,7 +77,7 @@ subdir:
 ### 四、高级特性与实用技巧
 1. 条件判断与函数
     - 条件语句：根据环境变量调整编译选项：
-        ```makefile
+  ```makefile
 ifeq ($(DEBUG),1)
     CFLAGS += -g
 endif
