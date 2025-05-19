@@ -49,7 +49,7 @@ gcc main.c -L./lib -lhello -o main  # -L指定库路径，-l指定库名
   ```bash
 gcc -fPIC -shared libhello.c -o libhello.so  # 生成动态库
 ```
-        运行时若找不到库，可通过 -Wl,-rpath 指定路径：
+    运行时若找不到库，可通过 -Wl,-rpath 指定路径：
   ```bash
 gcc main.c -L./lib -lhello -Wl,-rpath=./lib -o main
 ```
