@@ -3,12 +3,12 @@
 1. 版本与项目定义
     - 指定CMake最低版本要求：
         ```cmake
-cmake_minimum_required(VERSION 3.10)  # 兼容性保障
-```
+        cmake_minimum_required(VERSION 3.10)  # 兼容性保障
+        ```
     - 定义项目名称及版本：
         ```cmake
-project(MyProject VERSION 1.0 LANGUAGES CXX)  # 支持C++，可选版本号
-```
+        project(MyProject VERSION 1.0 LANGUAGES CXX)  # 支持C++，可选版本号
+        ```
 2. 编译标准与参数
     - 设置C/C++标准：
         ```cmake
