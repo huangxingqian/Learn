@@ -8,5 +8,5 @@ $(BIN):$(OBJ)
 	$(CC) $(CFLAGS) $^ -o $@
 %.o:%.c
 	$(CC) $(CFLAGS) -c $< -o $@
-clean：
+clean:
 	rm -f *.o $(OBJ)
