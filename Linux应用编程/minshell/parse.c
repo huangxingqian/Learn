@@ -1,5 +1,6 @@
 #include "parse.h"
 #include "init.h"
+#include "externs.h"
 #include <stdio.h>
 #include <unistd.h>
 #include <sys/types.h>
@@ -11,14 +12,13 @@
 void shell_loop()
 {
     while (1) {
-        printf("[mshell]$");
+        printf("[minshell]$");
         fflush(stdout);
         init();
         if (read_command() == -1) {
             break;
         }
-        
-        read_command();
+
         parse_command();
         execute_command();
     }
@@ -32,9 +32,9 @@ void shell_loop()
 int read_command(void)
 {
     if (fgets(cmdline, MAXLINE, stdin) == NULL) {
-        return -1
+        return -1;
     }
-    
+
     return 0;
 }
 
@@ -56,7 +56,7 @@ int parse_command(void)
         while (*cp == ' ' || *cp == '\t')
             cp++;
         // 到行尾跳出循环
-        if (*cp == '\0' || cp == '\n')
+        if (*cp == '\0' || *cp == '\n')
             break;
 
         cmd.args[i] = avp;
@@ -66,7 +66,7 @@ int parse_command(void)
         {
             *avp++ = *cp++;
         }
-        print("[%s]\n",cmd.args[i]);
+        printf("[%s]\n",cmd.args[i]);
         *avp++ = '\0';
         i++;
     }
