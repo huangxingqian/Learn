@@ -5,8 +5,14 @@
 
 char cmdline[MAXLINE+1];
 char avline[MAXLINE+1];
-COMMAND cmd;
+COMMAND cmd[PIPELINE];
+char infile[MAXNAME+1];
+char outfile[MAXNAME+1];
 
+int cmd_count；
+int backgnd;
+char *lineptr;
+char *avptr;
 int main(int argc,char* argv[])
 {
     setup();

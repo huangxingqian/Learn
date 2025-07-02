@@ -23,7 +23,9 @@ void sigint_handlder(int sig)
 
 void init()
 {
-    memset(&cmd, 0, sizeof(cmd));
-    memset(&cmdline, 0, sizeof(cmdline));
+    memset(cmd, 0, sizeof(cmd));
+    memset(cmdline, 0, sizeof(cmdline));
+    lineptr = cmdline;
+    avptr = avline;
 }
 
