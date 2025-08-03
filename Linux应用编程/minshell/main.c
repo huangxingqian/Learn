@@ -13,6 +13,7 @@ int cmd_count；
 int backgnd;
 char *lineptr;
 char *avptr;
+
 int main(int argc,char* argv[])
 {
     setup();
